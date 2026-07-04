@@ -16,6 +16,8 @@ export default function Login() {
       const response = await apiClient.post('/admin/login', { username, password });
       const token = response.data?.data?.token;
       if (!token) throw new Error('No token returned');
+
+      localStorage.removeItem("adminToken");
       localStorage.setItem('adminToken', token);
       toast.success('Login successful.');
       navigate('/admin');

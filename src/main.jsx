@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Suspense fallback={<Loader fullPage />}>
         <AppRoutes />
+        <Heartbeat />
       </Suspense>
     </BrowserRouter>
   </React.StrictMode>
